@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +16,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -27,6 +29,9 @@
 </head>
 
 <body id="page-top">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -50,6 +55,9 @@
 
     <!-- Hero Section -->
     <header class="hero-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-glow hero-glow-3"></div>
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-8 mx-auto text-center">
@@ -63,7 +71,7 @@
                             development, mobile apps, and innovative software architecture.
                         </p>
                         <div class="hero-actions">
-                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">View My Work</a>
+                            <a href="#portfolio" class="btn btn-primary btn-lg">View My Work</a>
                             <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
                         </div>
                         <div class="hero-stats">
@@ -110,16 +118,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <div class="section-header">
+                    <div class="section-header animate-on-scroll">
                         <h6 class="section-subtitle">About Me</h6>
                         <h2 class="section-title">Passionate About Creating Digital Excellence</h2>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center mt-5">
-                <div class="col-lg-8 mx-auto text-center">
-                    <div class="about-content">
-                        <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center mt-4">
+                <div class="col-lg-8 mx-auto">
+                    <div class="about-content animate-on-scroll">
                         <p class="lead mb-4">
                             I'm a seasoned software developer with a passion for creating innovative solutions that
                             drive business growth. With over 9 years of experience across multiple technologies and
@@ -156,7 +163,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <div class="section-header">
+                    <div class="section-header animate-on-scroll">
                         <h6 class="section-subtitle">My Expertise</h6>
                         <h2 class="section-title">Technologies & Skills</h2>
                     </div>
@@ -164,7 +171,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="1">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-globe"></i>
                         </div>
@@ -179,7 +186,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="2">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-mobile-screen"></i>
                         </div>
@@ -194,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="3">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-cloud"></i>
                         </div>
@@ -209,7 +216,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="1">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-database"></i>
                         </div>
@@ -224,7 +231,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="2">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-robot"></i>
                         </div>
@@ -239,7 +246,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card animate-on-scroll" data-delay="3">
                         <div class="expertise-icon">
                             <i class="fa-solid fa-gear"></i>
                         </div>
@@ -262,7 +269,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <div class="section-header">
+                    <div class="section-header animate-on-scroll">
                         <h6 class="section-subtitle">Experience</h6>
                         <h2 class="section-title">Professional Journey</h2>
                     </div>
@@ -271,7 +278,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="timeline">
-                        <div class="timeline-item">
+                        <div class="timeline-item animate-on-scroll">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -290,7 +297,7 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item animate-on-scroll">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -309,7 +316,7 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item animate-on-scroll">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -328,7 +335,7 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item animate-on-scroll">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -347,7 +354,7 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item animate-on-scroll">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -376,7 +383,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <div class="section-header">
+                    <div class="section-header animate-on-scroll">
                         <h6 class="section-subtitle">Portfolio</h6>
                         <h2 class="section-title">Featured Projects</h2>
                     </div>
@@ -384,7 +391,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="1">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/learnix.ai.png" alt="Learnix AI Educational Platform"
                                 class="img-fluid">
@@ -408,7 +415,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="2">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/runnersroadtoglory.jpg" alt="Runners Road to Glory Website"
                                 class="img-fluid">
@@ -436,7 +443,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="3">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/tresillian.jpg" alt="Tresillian Website" class="img-fluid">
                             <div class="portfolio-overlay">
@@ -460,7 +467,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="1">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/newcastleaiport.jpg" alt="Newcastle Airport"
                                 class="img-fluid">
@@ -486,7 +493,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="2">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/tradesaber.jpg" alt="TradeSaber" class="img-fluid">
                             <div class="portfolio-overlay">
@@ -510,9 +517,8 @@
                     </div>
                 </div>
 
-
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="3">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/jackpotjoyfully.jpg" alt="Jackpot Joyfully Website"
                                 class="img-fluid">
@@ -539,7 +545,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="1">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/watcheverymatch.jpg" alt="Watch Every Match Website"
                                 class="img-fluid">
@@ -565,11 +571,8 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="2">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/nowrpm.png" alt="NowRPM Mobile App" class="img-fluid">
                             <div class="portfolio-overlay">
@@ -594,7 +597,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="3">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/classscheduling.jpg" alt="Class Scheduling System"
                                 class="img-fluid">
@@ -621,7 +624,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card animate-on-scroll" data-delay="1">
                         <div class="portfolio-image">
                             <img src="assets/img/portfolio/fit_nutrition.png" alt="Kiosk POS System" class="img-fluid">
                             <div class="portfolio-overlay">
@@ -652,7 +655,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <div class="section-header">
+                    <div class="section-header animate-on-scroll">
                         <h6 class="section-subtitle">Get In Touch</h6>
                         <h2 class="section-title">Let's Build Something Amazing Together</h2>
                     </div>
@@ -660,7 +663,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-8 mx-auto">
-                    <div class="contact-info">
+                    <div class="contact-info animate-on-scroll">
                         <div class="row">
                             <div class="col-md-4 text-center mb-4">
                                 <div class="contact-item">
@@ -691,7 +694,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="social-links text-center mt-4">
+                    <div class="social-links text-center mt-4 animate-on-scroll">
                         <a href="https://www.linkedin.com/in/neil-ragadio-a284b4b7/" target="_blank"
                             class="social-link">
                             <i class="fa-brands fa-linkedin"></i>
@@ -714,7 +717,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>&copy; 2024 Neil Ragadio. All rights reserved.</p>
+                    <p>&copy; 2026 Neil Ragadio. All rights reserved.</p>
                 </div>
             </div>
         </div>
