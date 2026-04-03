@@ -642,10 +642,62 @@ section.bg-light,
     border-color: rgba(6, 182, 212, 0.3);
 }
 
+/* ===== CERTIFICATIONS ===== */
+.certification-card.expertise-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Same hover on both cards — no asymmetric cyan glow vs neighbour */
+.certification-card.expertise-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    background: var(--bg-card-hover);
+}
+
+.certification-card.expertise-card:hover::before {
+    opacity: 0;
+}
+
+.certification-card .cert-badge-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 5.75rem;
+    margin-bottom: 0.85rem;
+    flex: 0 0 auto;
+}
+
+.certification-card .cert-badge-img {
+    display: block;
+    width: 100%;
+    max-width: 26rem;
+    height: 5.75rem;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+.certification-card.expertise-card p {
+    margin-bottom: 0;
+}
+
+.certification-card .text-muted {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+}
+
 /* ===== EXPERIENCE / TIMELINE ===== */
 .timeline {
     position: relative;
-    padding-left: 3rem;
+    --timeline-gutter: 3rem;
+    --timeline-line: 2px;
+    padding-left: var(--timeline-gutter);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -656,7 +708,7 @@ section.bg-light,
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: var(--timeline-line);
     background: linear-gradient(180deg, var(--accent), var(--accent-secondary), var(--accent));
     border-radius: 1px;
 }
@@ -672,8 +724,10 @@ section.bg-light,
 
 .timeline-marker {
     position: absolute;
-    left: -3.55rem;
+    /* Line center sits at (timeline-line / 2); content starts at --timeline-gutter */
+    left: calc(var(--timeline-line) / 2 - var(--timeline-gutter));
     top: 1.8rem;
+    transform: translateX(-50%);
     width: 12px;
     height: 12px;
     background: var(--accent);
@@ -729,6 +783,22 @@ section.bg-light,
     font-size: 0.9rem;
     margin-bottom: 1rem;
     line-height: 1.6;
+}
+
+.timeline-content .timeline-details {
+    color: var(--text-body);
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+.timeline-content .timeline-details li {
+    margin-bottom: 0.4rem;
+}
+
+.timeline-content .timeline-details li:last-child {
+    margin-bottom: 0;
 }
 
 .tech-used {
@@ -1000,11 +1070,7 @@ section.bg-light,
     }
 
     .timeline {
-        padding-left: 2.5rem;
-    }
-
-    .timeline-marker {
-        left: -3.05rem;
+        --timeline-gutter: 2.5rem;
     }
 
     #mainNav .navbar-collapse {
@@ -1063,11 +1129,10 @@ section.bg-light,
     }
 
     .timeline {
-        padding-left: 1.5rem;
+        --timeline-gutter: 1.5rem;
     }
 
     .timeline-marker {
-        left: -2.05rem;
         width: 10px;
         height: 10px;
     }
