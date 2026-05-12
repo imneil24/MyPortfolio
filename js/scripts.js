@@ -1,10 +1,60 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    const THEME_STORAGE_KEY = 'nr_theme';
+    const DEFAULT_THEME_ID = 'palette-1';
+
     const navbar = document.getElementById('mainNav');
     const scrollProgress = document.getElementById('scrollProgress');
     const scrollToTopBtn = document.getElementById('scrollToTop');
     const navLinks = document.querySelectorAll('#mainNav .nav-link');
     const sections = document.querySelectorAll('section[id]');
+
+    // ===== THEME SWITCHER =====
+    const themeItems = document.querySelectorAll('.theme-switcher-item[data-theme]');
+
+    function applyTheme(themeId) {
+        const nextTheme = themeId || DEFAULT_THEME_ID;
+        if (nextTheme === 'default') {
+            document.documentElement.removeAttribute('data-theme');
+        } else {
+            document.documentElement.setAttribute('data-theme', nextTheme);
+        }
+
+        themeItems.forEach(item => {
+            item.setAttribute('aria-checked', item.dataset.theme === nextTheme ? 'true' : 'false');
+        });
+    }
+
+    function loadInitialTheme() {
+        try {
+            const saved = localStorage.getItem(THEME_STORAGE_KEY);
+            const theme = saved || DEFAULT_THEME_ID;
+            applyTheme(theme);
+        } catch (e) {
+            applyTheme(DEFAULT_THEME_ID);
+        }
+    }
+
+    function saveTheme(themeId) {
+        try {
+            localStorage.setItem(THEME_STORAGE_KEY, themeId);
+        } catch (e) {
+            // ignore storage errors (private mode, quota, etc.)
+        }
+    }
+
+    if (themeItems.length) {
+        loadInitialTheme();
+
+        themeItems.forEach(item => {
+            item.setAttribute('role', 'menuitemradio');
+            item.addEventListener('click', function () {
+                const themeId = this.dataset.theme;
+                applyTheme(themeId);
+                saveTheme(themeId);
+            });
+        });
+    }
 
     // ===== NAV SCROLL STATE =====
     function updateNavbar() {

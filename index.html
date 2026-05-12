@@ -24,6 +24,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('nr_theme');
+                var theme = saved || 'palette-1';
+                if (theme === 'default') {
+                    document.documentElement.removeAttribute('data-theme');
+                    return;
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'palette-1');
+            }
+        })();
+    </script>
+
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -49,6 +65,58 @@
                     <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item dropdown theme-switcher">
+                        <button class="nav-link dropdown-toggle" id="themeSwitcherButton" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Theme
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end theme-switcher-menu" aria-labelledby="themeSwitcherButton">
+                            <li>
+                                <button class="dropdown-item theme-switcher-item" type="button" data-theme="default">
+                                    <span class="theme-label">Default</span>
+                                    <span class="theme-swatches" aria-hidden="true">
+                                        <span class="swatch" style="background:#06b6d4"></span>
+                                        <span class="swatch" style="background:#22d3ee"></span>
+                                        <span class="swatch" style="background:#8b5cf6"></span>
+                                        <span class="swatch" style="background:#3b82f6"></span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item theme-switcher-item" type="button" data-theme="palette-1">
+                                    <span class="theme-label">Palette 1</span>
+                                    <span class="theme-swatches" aria-hidden="true">
+                                        <span class="swatch" style="background:#1B262C"></span>
+                                        <span class="swatch" style="background:#0F4C75"></span>
+                                        <span class="swatch" style="background:#3282B8"></span>
+                                        <span class="swatch" style="background:#BBE1FA"></span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item theme-switcher-item" type="button" data-theme="palette-2">
+                                    <span class="theme-label">Palette 2</span>
+                                    <span class="theme-swatches" aria-hidden="true">
+                                        <span class="swatch" style="background:#468432"></span>
+                                        <span class="swatch" style="background:#9AD872"></span>
+                                        <span class="swatch" style="background:#FFEF91"></span>
+                                        <span class="swatch" style="background:#FFA02E"></span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item theme-switcher-item" type="button" data-theme="palette-3">
+                                    <span class="theme-label">Palette 3</span>
+                                    <span class="theme-swatches" aria-hidden="true">
+                                        <span class="swatch" style="background:#8A5F41"></span>
+                                        <span class="swatch" style="background:#A77F60"></span>
+                                        <span class="swatch" style="background:#F3E4C9"></span>
+                                        <span class="swatch" style="background:#CCD67F"></span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
