@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const THEME_STORAGE_KEY = 'nr_theme';
-    const DEFAULT_THEME_ID = 'palette-1';
+    const DEFAULT_THEME_ID = 'default';
 
     const navbar = document.getElementById('mainNav');
     const scrollProgress = document.getElementById('scrollProgress');

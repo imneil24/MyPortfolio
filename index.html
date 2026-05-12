@@ -28,14 +28,14 @@
         (function () {
             try {
                 var saved = localStorage.getItem('nr_theme');
-                var theme = saved || 'palette-1';
+                var theme = saved || 'default';
                 if (theme === 'default') {
                     document.documentElement.removeAttribute('data-theme');
                     return;
                 }
                 document.documentElement.setAttribute('data-theme', theme);
             } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'palette-1');
+                document.documentElement.removeAttribute('data-theme');
             }
         })();
     </script>
