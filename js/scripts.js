@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.getElementById('mainNav');
     const scrollProgress = document.getElementById('scrollProgress');
     const scrollToTopBtn = document.getElementById('scrollToTop');
-    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+    // Only in-page section links — exclude Theme (button.nav-link) so mobile menu
+    // does not close before the Bootstrap dropdown can open or accept a choice.
+    const navLinks = document.querySelectorAll('#mainNav .navbar-nav a.nav-link[href^="#"]');
     const sections = document.querySelectorAll('section[id]');
 
     // ===== THEME SWITCHER =====
@@ -52,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const themeId = this.dataset.theme;
                 applyTheme(themeId);
                 saveTheme(themeId);
+                const collapse = document.querySelector('#navbarResponsive');
+                if (collapse && collapse.classList.contains('show')) {
+                    collapse.classList.remove('show');
+                }
             });
         });
     }
